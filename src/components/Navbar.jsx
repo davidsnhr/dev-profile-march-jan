@@ -11,7 +11,9 @@ const Navbar = ({ children }) => {
           </p>
           <p>About Me</p>
           <p>Projects</p>
-          <p>Contact Me</p>
+          <p>
+            <Link to="/contactme">Contact Me</Link>
+          </p>
         </div>
       </div>
       {children}
