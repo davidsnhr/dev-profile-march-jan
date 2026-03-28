@@ -1,5 +1,6 @@
 import { Resend } from 'resend';
 
+// eslint-disable-next-line no-undef
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const handler = async (req, res) => {
@@ -13,9 +14,14 @@ const handler = async (req, res) => {
     const data = await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>',
       to: 'davidsnhr@tec.mx',
-      subject: 'hello world',
-      html: `<strong>it works!</strong>
-      <strong>${message}</strong>`,
+      subject: `Nuevo mensaje de contacto de ${name}`,
+      html: `
+        <h2>Nuevo mensaje de contacto</h2>
+        <p><strong>Nombre:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Mensaje:</strong></p>
+        <p>${message}</p>
+      `,
     });
 
     return res.status(200).json({ data });

@@ -61,9 +61,13 @@ const Contactme = () => {
             onChange={handleOnchange}
           />
         </div>
-        <button style={{ width: '140px', height: '40px' }}>Contact Me</button>
+        <button 
+          style={{ width: '140px', height: '40px' }} 
+          onClick={handleSendEmail}
+        >
+          Contact Me
+        </button>
       </div>
-      <button onClick={handleSendEmail}>Go Back</button>
     </div>
   );
 };
